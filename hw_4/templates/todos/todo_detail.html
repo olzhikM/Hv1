@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ todo_list.title }}</h2>
+    <p>{{ todo_list.description }}</p>
+    <h3>Задачи</h3>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo.title }} - {{ todo.due_date }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

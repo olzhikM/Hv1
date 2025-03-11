@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <img src="{{ post.picture.url }}" class="card-img-top" alt="Картинка">
+        <div class="card-body">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.description }}</p>
+            <p><strong>Автор:</strong> {{ post.author }}</p>
+            {% if user == post.author or user.is_superuser %}
+                <a href="/posts/{{ post.id }}/delete" class="btn btn-danger">Удалить</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

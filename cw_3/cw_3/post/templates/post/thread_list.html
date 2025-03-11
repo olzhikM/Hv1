@@ -1,0 +1,21 @@
+{% extends "post/base.html" %}
+
+{% block content %}
+<h2>Темы</h2>
+<ul>
+    {% for thread in threads %}
+    <li>
+        <a href="{% url 'thread_detail' thread.id %}">{{ thread.name }}</a>
+        <a href="{% url 'thread_edit' thread.id %}">[Редактировать]</a>
+        <a href="{% url 'thread_delete' thread.id %}">[Удалить]</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>Создать новую тему</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать</button>
+</form>
+{% endblock %}

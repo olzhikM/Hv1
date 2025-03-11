@@ -1,0 +1,27 @@
+{% extends "post/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ thread.name }}</h2>
+    <p>{{ thread.description }}</p>
+
+    <h3>Посты:</h3>
+    <ul>
+        {% for post in thread.post_set.all %}
+            <li>
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.description }}</p>
+                <small>Автор: {{ post.author }}</small>
+                <br>
+                <a href="{% url 'post_edit' post.id %}" class="btn btn-warning btn-sm">Редактировать</a>
+                <a href="{% url 'post_delete' post.id %}" class="btn btn-danger btn-sm">Удалить</a>
+            </li>
+        {% empty %}
+            <li>Нет постов в этой теме.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'thread_edit' thread.id %}" class="btn btn-primary">Редактировать тему</a>
+    <a href="{% url 'thread_delete' thread.id %}" class="btn btn-danger">Удалить тему</a>
+</div>
+{% endblock %}

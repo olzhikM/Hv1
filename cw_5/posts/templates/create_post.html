@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать пост{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Создать пост</h2>
+
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>Ошибка!</strong> Проверьте корректность введенных данных.
+        </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="border p-4 bg-white shadow-sm">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label class="form-label" for="{{ form.title.id_for_label }}">Название</label>
+            {{ form.title }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="{{ form.picture.id_for_label }}">Изображение</label>
+            {{ form.picture }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="{{ form.description.id_for_label }}">Описание</label>
+            {{ form.description }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="{{ form.thread.id_for_label }}">Тема</label>
+            {{ form.thread }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Опубликовать</button>
+    </form>
+</div>
+{% endblock %}

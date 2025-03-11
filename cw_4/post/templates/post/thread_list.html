@@ -1,0 +1,20 @@
+{% extends 'post/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Список тем</h1>
+
+    <ul class="list-group">
+        {% for thread in threads %}
+            <li class="list-group-item">
+                <a href="{% url 'thread_detail' thread.id %}">
+                    {{ thread.name }}
+                </a>
+                
+            </li>
+        {% empty %}
+            <li class="list-group-item">Нет доступных тем</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

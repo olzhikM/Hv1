@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="/threads">Django Forum</a>
+        <form method="GET" action="{% url 'thread_list' %}" class="d-flex search-bar">
+            <input class="form-control me-2" type="text" name="q" placeholder="Поиск..." value="{{ query }}">
+            <button class="btn btn-primary" type="submit">Искать</button>
+        </form>
+    </div>
+</nav>
