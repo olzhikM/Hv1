@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Список столиков</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Количество мест</th>
+                <th>Доступность</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in tables %}
+            <tr>
+                <td>{{ table.number }}</td>
+                <td>{{ table.seats }}</td>
+                <td>
+                    {% if table.is_available %}
+                        <span class="text-success">Да</span>
+                    {% else %}
+                        <span class="text-danger">Нет</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 class="mt-4">Добавить столик</h3>
+    <form method="post" class="mt-3">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_number" class="form-label">Номер</label>
+            {{ form.number }}
+        </div>
+        <div class="mb-3">
+            <label for="id_seats" class="form-label">Количестов мест</label>
+            {{ form.seats }}
+        </div>
+        <div class="mb-3 form-check">
+            {{ form.is_available }}
+            <label for="id_is_available" class="form-check-label">Доступен</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+</div>
+{% endblock %}
