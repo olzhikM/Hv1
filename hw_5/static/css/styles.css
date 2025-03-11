@@ -1,0 +1,30 @@
+body {
+    background-color: #819ab4;
+}
+
+h2 {
+    color: #356596;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #5e7893;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-control {
+    border-radius: 8px;
+}

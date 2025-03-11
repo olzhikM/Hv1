@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4 text-center">📌 My Todos</h2>
+    <a href="{% url 'todo_add' %}" class="btn btn-primary mb-3">➕ Add New Todo</a>
+
+    <div class="list-group">
+        {% for todo in todos %}
+            <a href="{% url 'todo_detail' todo.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <span>{{ todo.title }}</span>
+                {% if todo.status %}
+                    <span class="badge bg-success">✔ Done</span>
+                {% else %}
+                    <span class="badge bg-warning">⏳ Pending</span>
+                {% endif %}
+            </a>
+        {% empty %}
+            <p class="text-muted text-center">No todos yet. Add your first one! 🚀</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
