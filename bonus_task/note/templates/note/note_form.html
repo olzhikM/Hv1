@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>📝 Форма заметки</h1>
+        <h1> Форма заметки</h1>
         <form method="post" class="note-form">
             {% csrf_token %}
             <div class="form-group">
@@ -20,8 +20,8 @@
                 {{ form.content }}
             </div>
             <div class="button-group">
-                <button type="submit" class="btn btn-save">💾 Сохранить</button>
-                <a href="{% url 'note_list' %}" class="btn btn-back">🔙 Назад</a>
+                <button type="submit" class="btn btn-save"> Сохранить</button>
+                <a href="{% url 'note_list' %}" class="btn btn-back">Назад</a>
             </div>
         </form>
     </div>

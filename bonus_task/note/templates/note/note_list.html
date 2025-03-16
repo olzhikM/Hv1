@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>📌 Заметки</h1>
-        <a href="{% url 'note_create' %}" class="btn btn-add">➕ Создать новую заметку</a>
+        <h1> Заметки</h1>
+        <a href="{% url 'note_create' %}" class="btn btn-add"> Создать новую заметку</a>
         <ul class="note-list">
             {% for note in notes %}
             <li class="note-item">
@@ -17,8 +17,8 @@
                 <p>{{ note.content }}</p>
                 <small>{{ note.created_at }}</small>
                 <div class="actions">
-                    <a href="{% url 'note_update' note.pk %}" class="btn btn-edit">✏️ Редактировать</a>
-                    <a href="{% url 'note_delete' note.pk %}" class="btn btn-delete">🗑️ Удалить</a>
+                    <a href="{% url 'note_update' note.pk %}" class="btn btn-edit">Редактировать</a>
+                    <a href="{% url 'note_delete' note.pk %}" class="btn btn-delete">Удалить</a>
                 </div>
             </li>
             {% endfor %}
