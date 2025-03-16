@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📌 Заметки</h1>
+        <a href="{% url 'note_create' %}" class="btn btn-add">➕ Создать новую заметку</a>
+        <ul class="note-list">
+            {% for note in notes %}
+            <li class="note-item">
+                <h3>{{ note.title }}</h3>
+                <p>{{ note.content }}</p>
+                <small>{{ note.created_at }}</small>
+                <div class="actions">
+                    <a href="{% url 'note_update' note.pk %}" class="btn btn-edit">✏️ Редактировать</a>
+                    <a href="{% url 'note_delete' note.pk %}" class="btn btn-delete">🗑️ Удалить</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

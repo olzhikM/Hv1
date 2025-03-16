@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удаление заметки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Вы действительно хотите удалить "<strong>{{ note.title }}</strong>"?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="button-group">
+                <button type="submit" class="btn btn-delete">🗑️ Удалить</button>
+                <a href="{% url 'note_list' %}" class="btn btn-back">❌ Отмена</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

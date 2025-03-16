@@ -1,0 +1,209 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Кнопка "Создать новую заметку" */
+.btn-add {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #5cb85c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #4cae4c;
+}
+
+/* Список заметок */
+.note-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Карточка заметки */
+.note-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.note-item h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.note-item p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.note-item small {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Кнопки действий */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #ec971f;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+
+/* Стили для формы */
+.note-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Поля формы */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Группа кнопок */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Кнопки формы */
+.btn-save {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+}
+
+.btn-save:hover {
+    background-color: #4cae4c;
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* 🔥 Стиль страницы удаления заметки */
+.delete-container {
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}

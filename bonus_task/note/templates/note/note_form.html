@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заметки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Форма заметки</h1>
+        <form method="post" class="note-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_title">Заголовок:</label>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <label for="id_content">Содержание:</label>
+                {{ form.content }}
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-save">💾 Сохранить</button>
+                <a href="{% url 'note_list' %}" class="btn btn-back">🔙 Назад</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
